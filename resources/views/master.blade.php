@@ -14,8 +14,10 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('portal/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <!-- Custom CSS -->
     <link href="{{ asset('portal/css/sb-admin-2.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('portal/styles/custom.css') }}" rel="stylesheet">
 
     <link href="{{ asset('portal/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 

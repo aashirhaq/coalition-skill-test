@@ -21,6 +21,12 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <li class="nav-item {{ Request::is('tasks*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('tasks.index') }}">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>Tasks</span></a>
+    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider">

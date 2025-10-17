@@ -1,0 +1,1 @@
+<td><span class="py-1 px-2 badge badge-{{ $status ? 'success' : 'danger' }}">{{ $status ? 'Active' : 'In-active' }}</button></td>

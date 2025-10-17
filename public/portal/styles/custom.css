@@ -1,4 +1,4 @@
-.custom-form-group.required label::after {
+.form-group.required label::after {
     content: "*";
     color: #dc3545;
 }
