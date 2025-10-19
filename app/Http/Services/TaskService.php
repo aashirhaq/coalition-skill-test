@@ -12,10 +12,17 @@ class TaskService {
         $this->model = new Task();
     }
 
-    public function list($relations = array())
+    public function list($params = [], $relations = [])
     {
-        $pagination = session()->get('pagination') ?? 10;
-        return $this->model->with($relations)->orderby('priority', 'desc')->get();
+        extract($params);
+
+        $query = $this->model;
+
+        if(isset($project) && $project){
+            $query = $query->where('project_id', $project);
+        }
+
+        return $query->with($relations)->orderby('priority', 'desc')->get();
     }
 
     public function fetch($id)

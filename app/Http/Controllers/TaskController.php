@@ -12,6 +12,7 @@ use App\Http\Services\{
     RouterService,
     TaskService
 };
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class TaskController extends Controller
@@ -26,12 +27,17 @@ class TaskController extends Controller
         $this->routerService = new RouterService();
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $entity = $this->entity;
-        $records = $this->service->list(['project']);
+        $params = $request->all();
 
-        return view($this->router, compact('entity', 'records'));
+        $records = $this->service->list($params, ['project']);
+
+        $projectSvc = new ProjectService();
+        $filters['projects'] = $projectSvc->all();
+
+        return view($this->router, compact('entity', 'records', 'filters'));
     }
 
     public function create()

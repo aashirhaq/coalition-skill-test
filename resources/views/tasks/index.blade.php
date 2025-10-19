@@ -6,7 +6,13 @@
 
 @section('content')
 
+
 <div class="col-12">
+        <div class="row">
+            <x-filter-collapse-button key="filters-collapse" />
+            <x-filters.task-filters :entity='$entity' :filters='$filters' />
+        </div>
+
     <x-add-new-button :entity='$entity' />
     <div class="card shadow mb-4">
         {{-- <x-card-header-list total="$records->total()" /> --}}
